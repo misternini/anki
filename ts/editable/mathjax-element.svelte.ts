@@ -12,8 +12,8 @@ import Mathjax_svelte from "./Mathjax.svelte";
 
 const mathjaxTagPattern = /<anki-mathjax(?:[^>]*?block="(.*?)")?[^>]*?>(.*?)<\/anki-mathjax>/gsu;
 
-const mathjaxBlockDelimiterPattern = /\\\[(.*?)\\\]/gsu;
-const mathjaxInlineDelimiterPattern = /\\\((.*?)\\\)/gsu;
+const mathjaxBlockDelimiterPattern = /\\\[((?:(?!\\\[).)*?)\\\]/gsu;
+const mathjaxInlineDelimiterPattern = /\\\(((?:(?!\\\().)*?)\\\)/gsu;
 
 function trimBreaks(text: string): string {
     return text
